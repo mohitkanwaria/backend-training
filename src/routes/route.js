@@ -61,19 +61,18 @@ module.exports = router;
 
 ////////////////////////////////////////////////////////////1/////////////////////////////////////////////////////////////////
 
-//first problem movie wala code he idhar 
 router.get('/get-movies',function(req, res){ //student detail api he 
-    let movies1= ["shole ","Rang de basanti","dil mange more","tiranga"]//api is implementation is used to send response for request
-    res.send(movies1)//movies wala iske jese krna he
+    let movies1= ["Naruto ","Dragon ball-z","Death note","One piece"]//api is implementation is used to send response for request
+    res.send(movies1)
 })
 
 
 ///////////////////////////////////////////////////////////2//////////////////////////////////////////////////////////////////
 
-// second wala problem code idhar he 
 router.get('/get-movie/:indexNumber',function(req, res){ //student detail api he 
     
-    let movies=['rang de basanti','The shining','Lord of the rings','batman begins']
+    let movies=['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins']
+
     let index = req.params.indexNumber;
     console.log(movies[index])
      res.send(movies[index])
@@ -82,8 +81,8 @@ router.get('/get-movie/:indexNumber',function(req, res){ //student detail api he
 
 ////////////////////////////////////////////////////3/////////////////////////////////////////////////////////////////////////
 
-//Third wala solution 
-router.get('/get-moviess/:indexNumber',function(req, res){ //student detail api he 
+ 
+router.get('/get-moviess/:indexNumber',function(req, res){ //student detail api
     
     let moviesName=['rang de basanti','The shining','Lord of the rings','batman begins']
     let index = req.params.indexNumber;
@@ -99,7 +98,6 @@ router.get('/get-moviess/:indexNumber',function(req, res){ //student detail api 
 
 /////////////////////////////////////////////////////////4////////////////////////////////////////////////////////////////////
 
-//forth wala idhar he
 router.get('/get-/films',function(req, res){ //student detail api he    
 
     let moviesName=[ {"id": 1,"name": "The Shining"}, 
@@ -112,7 +110,7 @@ router.get('/get-/films',function(req, res){ //student detail api he
 
 //////////////////////////////////////////////////////5///////////////////////////////////////////////////////////////////////
 
-//fifth program 
+
 
 router.get('/get-/films/:indexNumber',function(req, res){ //student detail api he    
 
@@ -127,7 +125,4 @@ router.get('/get-/films/:indexNumber',function(req, res){ //student detail api h
      res.send(moviesName[index])
      }
 })
-
-
-
 
