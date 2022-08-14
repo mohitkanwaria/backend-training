@@ -14,38 +14,38 @@ router.get('/test-me', function (req, res) {
 });
 
 
-router.get("/test-api-6", function (req, res) {
-  res.send({ a: 56, b: 45 })
-})
+// router.get("/test-api-6", function (req, res) {
+//   res.send({ a: 56, b: 45 })
+// })
 
-router.post("/test-post", function (req, res) {
-  res.send([23, 45, 6])
-})
-
-
-router.post("/test-post-2", function (req, res) {
-  res.send({ msg: "hi", status: true })
-})
-
-router.post("/test-post-3", function (req, res) {
-  // let id = req.body.user
-  // let pwd= req.body.password
-
-  // console.log( id , pwd)
-
-  console.log(req.body)
-
-  res.send({ msg: "hi", status: true })
-})
+// router.post("/test-post", function (req, res) {
+//   res.send([23, 45, 6])
+// })
 
 
+// router.post("/test-post-2", function (req, res) {
+//   res.send({ msg: "hi", status: true })
+// })
 
-router.post("/test-post-4", function (req, res) {
-  let arr = [12, "functionup"]
-  let ele = req.body.element
-  arr.push(ele)
-  res.send({ msg: arr, status: true })
-})
+// router.post("/test-post-3", function (req, res) {
+//   // let id = req.body.user
+//   // let pwd= req.body.password
+
+//   // console.log( id , pwd)
+
+//   console.log(req.body)
+
+//   res.send({ msg: "hi", status: true })
+// })
+
+
+
+// router.post("/test-post-4", function (req, res) {
+//   let arr = [12, "functionup"]
+//   let ele = req.body.element
+//   arr.push(ele)
+//   res.send({ msg: arr, status: true })
+// })
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -174,7 +174,7 @@ router.post('/voting', function (req, res) {
 //     res.send( { data:finalArr, status : true})
 // })
 
-////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 router.post("/createUser", async function (req, res) {
   let data = req.body
   // console.log(data);
@@ -182,16 +182,19 @@ router.post("/createUser", async function (req, res) {
   res.send({ msg: savedData })
 });
 
-// router.post("/createUser",UserController.createUser)
 
-router.get("/getUsersdata", userController.getUsersData)
 
-// router.get("/getUsersData",async function (req, res) {
-//   let allUsers = Usemodel.find()
-//   // let data = req.body
-//   // console.log(data); 
-//   res.send({ msg: allUsers })
-// });
+router.post("/createUser",userController.createUser) //userController.createUser =handler
+router.get("/getUsersdata", userController.getUsersData)  //
+
+
+
+router.get("/getUsersData",async function (req, res) {
+  // let allUsers = Usemodel.find()
+  // let data = req.body
+  // console.log(data); 
+  // res.send({ msg: allUsers })
+});
 
 // {
 //   "name" : "mohit",
