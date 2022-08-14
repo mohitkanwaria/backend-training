@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const UserModel = require("../Modals/userModel")
-const userController = require("../controllers/user controller")
+const userController = require("../controllers/user controller");
+const userModel = require('../Modals/userModel');
 
 router.get('/students/:name', function (req, res) {
   let studentName = req.params.name
@@ -209,7 +210,67 @@ router.get("/getUsersData",async function (req, res) {
 //   "cars" : [ ]
 // }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// controllers/user Controller.js
 
+//controller can contain all the container.
+
+// const UserModel = require("../Modals/userModel")
+
+
+// //this is the post api
+// const createUser = async function (req, res) {
+//     let data = req.body
+//     let savedData = await UserModel.create(data)  //data = entry ,create = it will create a entry inside my data base with following (data).
+//     res.send({ msg: savedData })
+// }
+// //this is the get api
+// const getUsersData = async function (req, res) {
+//     let allUsers = await UserModel.find()  //in this hey usermodel  go into the data base and find all the entries inside that user collection in the data base.
+//     res.send({ msg: allUsers })
+// }
+
+// module.exports.getUsersData = getUsersData
+// module.exports.createUser = createUser
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Modals/userModel.js
+
+// const mongoose = require('mongoose');
+
+// const userSchema = new mongoose.Schema({  //schema = a plan,a model
+//     firstname: String,
+//     lastName: String,
+//     mobile: {
+//         type: String,
+//         unique: true,
+//         required: true
+//     },
+//     emailId: String,
+//     gender: {
+//         type: String,
+//         enum: ["male", "female", "LGBTQ"]
+//     },
+//     age: Number,
+//     isIndian: Boolean,
+//     parentsInfo: {
+//         motherName: String,
+//         fatherName: String,
+//         siblingName: String,
+//     },
+//     cars: [String]
+// }, { timestamps: true });
+// //createdAt :
+// //updatedAt :
+
+
+// module.exports = mongoose.model('User', userSchema)//users in database
+// //user = name of the collection of the database.
+
+
+
+// //String,Number
+// //Boolean,Object/Json,array
 
 
 module.exports = router;
