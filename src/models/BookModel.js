@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const BookSchema = new mongoose.Schema( { //data creation beforre rulles
-    bookName : {
-        type:String,
-        required:true,
-        unique:true,
+const BookSchema = new mongoose.Schema({ //data creation before rules
+    bookName: {
+        type: String,
+        required: true,
+        // unique:true,
     },
     authorName: String,
     // mobile: {
@@ -25,11 +25,40 @@ const BookSchema = new mongoose.Schema( { //data creation beforre rulles
     //     siblingName: String
     // },
     // cars: [ String  ]
+    tags : ["String"],
+    date : {
+        type : Date,
+        default : Date.now
+    },
+    isPublished : Boolean,
+    Prices : {
+        indianPrices : String,
+        europePrince : String
+    },
+    sales : { type : Number , default : 10},
+
 }, { timestamps: true });
 
-module.exports = mongoose.model('Book', BookSchema) //users
+module.exports = mongoose.model('Book', BookSchema) //books in database
+//Book = name of the collection of the database.
 
 
 
 // String, Number
 // Boolean, Object/json, array
+
+//validators:
+//required : true
+//unique
+//default
+
+//String
+//Number
+//Date
+//Boolean
+//Arrays
+//Object
+//ObjectId
+//Buffer - not cover
+
+//No SQL vs SQL:-
