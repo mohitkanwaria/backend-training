@@ -3,42 +3,49 @@ const bookModel = require("../models/bookModel")
 const publisherModel = require("../models/newPublisher")
 const mongoose = require("mongoose")
 
-// //==================3====================
-const createBook= async function (req, res) {
+//==================3===============================
+const createBook = async function (req, res) {
     let book = req.body
-    let authorId=book.author_id
-    let publisherId=book.publisher
+    let authorId = book.author_id
+    let publisherId = book.publisher
+
     //author Validation
-    if(!authorId) return res.send({msg:"authorId must be present" })
-    if(!mongoose.isValidObjectId(authorId))return res.send({msg:"authorId is Invalid" })
-    let author=await authorModel.findById(book.author_id)
-    if(!author)return res.send({msg:"author not found"})
+    //3(a)
+    if (!authorId) return res.send({ msg: "authorId must be present" })
+    //3(b)
+    if (!mongoose.isValidObjectId(authorId)) return res.send({ msg: "authorId is Invalid" })
+    
+    let author = await authorModel.findById(book.author_id)
+    
+    if (!author) return res.send({ msg: "author not found" })
     //publisher validation
-    if(!publisherId)return res.send({msg:"publisherId must be present"})
-    if(!mongoose.isValidObjectId(publisherId))return res.send({msg:"publisherId is Invalid" })
-    let publisher=await publisherModel.findById(book.publisher)
-    if(!publisher)return res.send({msg:"publisher not found"})
+    //3(c)
+    if (!publisherId) return res.send({ msg: "publisherId must be present" })
+    //3(d)
+    if (!mongoose.isValidObjectId(publisherId)) return res.send({ msg: "publisherId is Invalid" })
+    let publisher = await publisherModel.findById(book.publisher)
+    if (!publisher) return res.send({ msg: "publisher not found" })
 
     let bookCreated = await bookModel.create(book)
-    res.send({data: bookCreated})
+    res.send({ data: bookCreated })
 }
 
-//========================4===============
+//========================4=========================================================================
 const getBooksWithAuthorDetails = async function (req, res) {
-    let specificBook = await bookModel.find().populate(['author_id',"publisher"])
+    let specificBook = await bookModel.find().populate(['author_id', "publisher"])
     res.send({ data: specificBook })
 
 }
-//=====================5a============================
-const updateBooks= async function( req, res){
-    let data = await bookModel.updateMany( {$or :[{"publisher_id" :"6300b5c91d41770b26fa8f3f"}, {"publisher_id" :"6300e09b98299403f90daac4"}]}, { $set:{isHardCover : true}},{new:true})
-    res.send( { msg : data})
- }
- //Q=5b
- const updatePrice=async function(req,res){
-    let price=await bookModel.updateMany({"ratings":{$gt:3.5}},{$inc:{"price":+10}},{new:true})
+//=====================5a============================================================================
+const updateBooks = async function (req, res) {
+    let data = await bookModel.updateMany({ $or: [{ "publisher_id": "62ff72227ea027e1086f322e" }, { "publisher_id": "6300bffcc078f81b860c8d3d" }] }, { $set: { isHardCover: true } }, { new: true })
+    res.send({ msg: data })
+}
+//=======================Q=5b============================================================================
+const updatePrice = async function (req, res) {
+    let price = await bookModel.updateMany({ "ratings": { $gt: 3.5 } }, { $inc: { "price": +10 } }, { new: true })
     res.send(price)
- }
+}
 
 
 module.exports.createBook = createBook
