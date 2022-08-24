@@ -13,7 +13,7 @@ const bookSchema = new mongoose.Schema({
         type: ObjectId,
         ref: "Publisher"
     },
-    isHardcover: {
+    isHardCover: {
         type: Boolean,
         default: false,
     }

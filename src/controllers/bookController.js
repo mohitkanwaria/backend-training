@@ -14,9 +14,9 @@ const createBook = async function (req, res) {
     if (!authorId) return res.send({ msg: "authorId must be present" })
     //3(b)
     if (!mongoose.isValidObjectId(authorId)) return res.send({ msg: "authorId is Invalid" })
-    
+
     let author = await authorModel.findById(book.author_id)
-    
+
     if (!author) return res.send({ msg: "author not found" })
     //publisher validation
     //3(c)
@@ -38,7 +38,8 @@ const getBooksWithAuthorDetails = async function (req, res) {
 }
 //=====================5a============================================================================
 const updateBooks = async function (req, res) {
-    let data = await bookModel.updateMany({ $or: [{ "publisher_id": "62ff72227ea027e1086f322e" }, { "publisher_id": "6300bffcc078f81b860c8d3d" }] }, { $set: { isHardCover: true } }, { new: true })
+    const booksData= await bookModel.updateMany({$set : {isHardCover : 0}},{new:true})
+    let data = await bookModel.updateMany(  { "publisher_id": "6300bffcc078f81b860c8d3d" } , { $set: { isHardCover: true } }, { new: true })
     res.send({ msg: data })
 }
 //=======================Q=5b============================================================================
