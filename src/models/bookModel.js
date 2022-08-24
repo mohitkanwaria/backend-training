@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
 
 const bookSchema = new mongoose.Schema( {
-    bookName: String, 
+    bookName: String, //"mohit"
     authorName: String, 
     tags: [String],
     
-    isPublished: Boolean,
+    isPublished: Boolean,//0 1
     prices: {
         indianPrice: String,
         europePrice: String,
     },
-    sales: {type: Number, default: 10},
+    sales: {type: Number,//13
+             default: 10},
     
     // " best boook on earth"   [ "Nodejs in detail" , "mongodb in detail", "fronend in detail"] 
     // {
@@ -24,4 +25,4 @@ const bookSchema = new mongoose.Schema( {
 }, { timestamps: true });
 
 
-module.exports = mongoose.model('Book', bookSchema) //users
+module.exports = mongoose.model('Book', bookSchema) //users   //books

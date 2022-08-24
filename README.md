@@ -75,3 +75,16 @@ time , IP, Route should be printed on each line in terminal( every time an api i
 2010-08-19 14:00:00 , 123.459.898.734 , /createUser
 2010-08-19 14:00:00 , 123.459.898.734 , /basicAPi
 2010-08-19 14:00:00 , 123.459.898.734 , /falanaAPI
+
+
+//middleware kya karta hai yeh ek function ke tarah kam aata hai,hum agal se eske ander code likhte hai or ja hame eske jarurat hoti hai tab hum esko export karwa sakte hai,jisse hamara code bulky nahi lagega or easy tu read hoga.or eska koi kam nhi hota .
+
+//aggregation kya hota hai hai yeh hum use karte hai kise cheez ko filter karne main ,jaise for ex main kise dukaan main gaya or maine waha order kiya ke mujhe wha medium size pizza chayea and then uske baad maine filter kiya mujhe chicken wala chayeye and thyen maine filter kiya mujhe 500 ke range wala chayeye,to hum kya kar rahe hai hum sabhi step par filter kar rahe hai ke mujhe kya cheyea(pizza>medium>price-500).
+
+//$group =esme kya hota hai hum no of operation perform kar sakte ho hai ek saath jaise finding,counts,averages,maxi.
+
+//$single =esme kya hota hai hum ek time pe sirf ek he operation he perform kar sakte hai.
+
+//
+
+//([{stage1},{stage2},{stage3},.....])
