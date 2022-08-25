@@ -13,6 +13,7 @@ mongoose.connect("mongodb+srv://mohitkanwaria_:IZ2vta9qwavx3n0S@cluster0.2byd2qy
 .then( () => console.log("MongoDb is connected"))
 .catch ( err => console.log(err) )
 
+const moment = require('moment')
 app.use (
     function (req, res, next) {
         // console.log ("inside GLOBAL MW");
