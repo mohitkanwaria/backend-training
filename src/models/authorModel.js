@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//author schema (1B):-
 const authorSchema = new mongoose.Schema({
     author_id: {
         type: Number,
@@ -11,4 +12,4 @@ const authorSchema = new mongoose.Schema({
 
 }, { timestamps: true })
 
-module.exports = mongoose.model('author', authorSchema)
+module.exports = mongoose.model('Old_author', authorSchema)
