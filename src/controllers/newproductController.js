@@ -1,5 +1,6 @@
 const productModel = require("../models/productModel")
 
+//1
 const createProduct= async function (req, res) {
     let data= req.body
      let savedData= await productModel.create(data)
@@ -7,3 +8,4 @@ const createProduct= async function (req, res) {
 }
 
 module.exports.createProduct = createProduct;
+

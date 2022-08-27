@@ -15,33 +15,33 @@ mongoose.connect("mongodb+srv://mohitkanwaria_:IZ2vta9qwavx3n0S@cluster0.2byd2qy
 .catch ( err => console.log(err) )
 
 
-app.use (
-    function (req, res, next) {
-        // console.log ("inside GLOBAL MW");
-        let obj =
-        {
-            "name": "mohit",
-            "city" : "Dabwali",
-            "address_pincode": "125104"
-            // "age" : "23"
-        }
-        obj.age =12,  //agr obj ke ander value nhi hai to hum usko bahar lekh ke usko obj ke ander ase add karwa sakte hai.
-        obj["age"] =12,
+// app.use (
+//     function (req, res, next) {
+//         // console.log ("inside GLOBAL MW");
+//         let obj =
+//         {
+//             "name": "mohit",
+//             "city" : "Dabwali",
+//             "address_pincode": "125104"
+//             // "age" : "23"
+//         }
+//         obj.age =12,  //agr obj ke ander value nhi hai to hum usko bahar lekh ke usko obj ke ander ase add karwa sakte hai.
+//         obj["age"] =12,
     
-        console.log(obj.name)
-        console.log(obj["name"])
-        console.log(obj.city)
-        console.log(obj["city"])
-        console.log(obj.address_pincode)
-        console.log(obj["address_pincode"])
-        console.log(obj.age)
-        console.log(obj["age"])
+//         console.log(obj.name)
+//         console.log(obj["name"])
+//         console.log(obj.city)
+//         console.log(obj["city"])
+//         console.log(obj.address_pincode)
+//         console.log(obj["address_pincode"])
+//         console.log(obj.age)
+//         console.log(obj["age"])
     
-        res.send({msg:"done"})
-        console.log("Hi I am a middleware named Mid3")
-        next()
-  }
-  );
+//         res.send({msg:"done"})
+//         console.log("Hi I am a middleware named Mid3")
+//         next()
+//   }
+//   );
 
 app.use('/', route);
 
