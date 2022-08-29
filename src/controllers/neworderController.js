@@ -8,10 +8,11 @@ const createOrder = async (req, res) => {
     let data = req.body
     const isFree = req.headers//["isfreeappuser"]
 
-    if (isFree.isfreeappuser === 'true') data.isFreeAppUser = true
+    if (isFree.isfreeappuser === 'true') data.isFreeAppUser = true/*  */
     else data.isFreeAppUser = false
     //to convert the string value "true" into boolean
    // let type = typeof (data.isFreeAppUser)
+    
 
     let checkUserId = mongoose.Types.ObjectId.isValid(data.userId)//retrun ture or false
     let checkProductId = mongoose.Types.ObjectId.isValid(data.productId)
