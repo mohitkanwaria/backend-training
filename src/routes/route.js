@@ -3,9 +3,9 @@ const router = express.Router();
 // const UserModel= require("../models/userModel.js")
 const UserController= require("../controllers/newuserController")
 const ProductController= require("../controllers/newproductController")
-const commonMW = require ("../middlewares/commonMiddlewares")
-const OrderController= require("../controllers/neworderController")
 
+const OrderController= require("../controllers/neworderController")
+const commonMW = require ("../middlewares/commonMiddlewares")
 
 router.get("/test-me", function (req, res) {
     res.send("My first ever api!")
