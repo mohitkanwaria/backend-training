@@ -28,6 +28,7 @@ mongoose.connect("mongodb+srv://mohitkanwaria_:IZ2vta9qwavx3n0S@cluster0.2byd2qy
 // app.use('/users')     //semi globall middleware
 app.use('/', route)
 
+
 app.listen(process.env.PORT || 3000, function () {
     console.log('Express app running on port ' + (process.env.PORT || 3000))
 });
