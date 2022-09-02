@@ -9,7 +9,7 @@ const weather = async (req, res) => {
         }
         let result = await axios(link)
 
-        res.status(200).send({ meg: result })
+        res.status(200).send({ meg: result.data })
     } catch (err) {
         console.log(err)
         res.status(500).send({ msg: err.message })

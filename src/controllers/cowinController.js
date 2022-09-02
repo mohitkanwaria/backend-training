@@ -78,14 +78,15 @@ let getOtp = async function (req, res) {
     }
 }
 
-/////////////////////////
+////////////////////////////////////////////////////
 
 let getDistrictsId = async function (req, res) {
     try {
         let districtId = req.query.district_id
         let date = req.query.date
         
-        console.log(`query params are: ${districtId} ${date} `) 
+        console.log(`query params are: ${districtId} ${date} `)
+         
         var options = {
             method: "get",
             url: `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${districtId}&date=${date}`,
