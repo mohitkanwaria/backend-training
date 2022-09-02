@@ -9,7 +9,7 @@ const changeMeme = async (req, res) => {
         const password = req.query.password
 
         let link = {
-            method: "get",
+            method: "post",
             url: `https://api.imgflip.com/caption_image?template_id=${template_id}& text0=${text0}&text1=${text1}&username=${username}&password=${password}`
         }
 
