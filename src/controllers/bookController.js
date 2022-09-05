@@ -36,10 +36,11 @@ const getBooksWithAuthorDetails = async function (req, res) {
     res.send({ data: specificBook })
 
 }
+
 //=====================5a============================================================================
 const updateBooks = async function (req, res) {
     const booksData= await bookModel.updateMany({$set : {isHardCover : 0}},{new:true})
-    let data = await bookModel.updateMany(  { "publisher_id": "6300bffcc078f81b860c8d3d" } , { $set: { isHardCover: true } }, { new: true })
+    let data = await bookModel.updateMany(  { "publisher_id" : "6300bffcc078f81b860c8d3d" } , { $set: { isHardCover: true } }, { new: true })
     res.send({ msg: data })
 }
 //=======================Q=5b============================================================================
